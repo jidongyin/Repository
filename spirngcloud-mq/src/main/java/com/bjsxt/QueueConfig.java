@@ -17,6 +17,7 @@ public class QueueConfig {
 	 */
 	@Bean
 	public Queue createQueue(){
+		System.out.println("222222222222222222");
 		
 		return new Queue("hello-queue");
 		
