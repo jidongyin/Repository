@@ -42,6 +42,9 @@ public class PushReceiver {
 	@RabbitHandler
 	public void process(String msg) {
 		System.out.println("push........receiver: " + msg);
+		
+		
+		System.out.println("11111111111111111111111111111111111111");
 
 	}
 
