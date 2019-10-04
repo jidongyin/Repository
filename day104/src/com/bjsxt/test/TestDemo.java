@@ -4,4 +4,6 @@ public interface TestDemo {
 	
 	void mm1();
 	
+	void mm3();
+	
 }
