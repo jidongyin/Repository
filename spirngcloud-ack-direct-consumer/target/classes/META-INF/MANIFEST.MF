@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: spirngcloud-ack-direct-consumer
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Administrator
+Implementation-Vendor-Id: com.bjsxt
+Build-Jdk: 1.8.0_201
+Implementation-URL: http://projects.spring.io/spring-boot/spirngcloud-
+ ack-direct-consumer/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
