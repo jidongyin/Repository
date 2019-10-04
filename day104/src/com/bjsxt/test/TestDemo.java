@@ -8,6 +8,9 @@ public interface TestDemo {
 	
 	void mm3();
 	
+
 	
 	void mm6();
+
+	void mm5();
 }
