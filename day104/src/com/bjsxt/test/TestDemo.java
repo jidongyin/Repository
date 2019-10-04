@@ -3,8 +3,5 @@ package com.bjsxt.test;
 public interface TestDemo {
 	
 	void mm1();
-	void mm3();
-	
-	void mm3();
-	
+	void mm2();
 }
