@@ -1,9 +1,9 @@
 spring:
   profiles:
     active:
-     - test
+      - test
 ---
 spring:
-  profiles: test #测试环境
+  profiles: 
     application:
-        name: springcloud-dept-config-test
+       name: springcloud-dept-config-test
