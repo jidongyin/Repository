@@ -7,3 +7,13 @@ spring:
   profiles: 
     application:
        name: springcloud-dept-config-test
+---
+spring:
+  profiles:
+    active:
+      - dev
+---
+spring:
+  profiles: 
+    application:
+       name: springcloud-dept-config-dev
