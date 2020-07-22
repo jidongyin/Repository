@@ -15,6 +15,6 @@ spring:
      - test
 ---
 spring:
-  profiles: test #开发环境
+  profiles: test #测试环境
     application:
         name: springcloud-dept-config-test
