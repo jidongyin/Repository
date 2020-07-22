@@ -1,17 +1,6 @@
 spring:
   profiles:
     active:
-     - dev
----
-spring:
-   profiles: dev #开发环境
-      application:
-         name: springcloud-dept-config-dev
-
----
-spring:
-  profiles:
-    active:
      - test
 ---
 spring:
