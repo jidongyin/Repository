@@ -1,0 +1,49 @@
+﻿spring: 
+  profiles: 
+   active: 
+    - dev
+---   
+server: 
+  port: 8761
+  
+
+spring: 
+  profiles: dev  #开发环境
+  application: 
+      name: springcloud-config-client-eureka-client
+
+eureka: 
+  instance:
+     hostname: eureka8761.com  #eureka服务端的实例名称(host文件中的别名)
+  client: 
+    register-with-eureka: false     #false表示不向注册中心注册自己。
+    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url: 
+      defaultZone: http://eureka8761.com:8761/eureka/    #手牵手 7001中有7002和7003
+      
+  
+         
+---
+spring: 
+  profiles: 
+   active: 
+    - test
+    
+server: 
+  port: 8761
+
+spring: 
+  profiles: test  #测试环境
+  application: 
+      name: springcloud-config-client-eureka-client
+      
+eureka: 
+  instance:
+     hostname: eureka8761.com  #eureka服务端的实例名称(host文件中的别名)
+  client: 
+    register-with-eureka: false     #false表示不向注册中心注册自己。
+    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url: 
+      defaultZone: http://eureka8761.com:8761/eureka/    #手牵手 7001中有7002和7003
+      
+  

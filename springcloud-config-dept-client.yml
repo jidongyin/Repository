@@ -1,0 +1,87 @@
+﻿spring: 
+  profiles: 
+   active: 
+    - dev
+---   
+server: 
+  port: 8001 
+  
+spring:
+  profiles:  #dev  开发环境
+  application:
+    name: springcloud-dept-provider                      #对外暴露的微服务的名称
+  datasource:
+     type: com.alibaba.druid.pool.DruidDataSource     #当前数据源的类型阿里云的
+     driver-class-name: com.mysql.jdbc.Driver       #Mysql的驱动包org.git.mm.mysql.Driver
+     url: jdbc:mysql://localhost:3306/cloud1         #连接数据库的名称
+     username: root
+     password: root
+     dbcp2:
+      min-idle: 6              #当前数据库连接池的最小维持连接数
+      initial-size: 6          #初始化连接
+      max-total: 6            #最大连接数
+      max-wait-millis: 200      #等待连接获取的做大超时时间
+      
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件的路径
+  type-aliases-package: com.bjsxt.springcloud.pojo    #所有的entity的实体类路径
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                 #mapper映射的文件
+
+eureka:
+  client:                       #客户端注册进行eureka服务列表
+   service-url:
+    defaultZone: http://eureka8761.com:8761/eureka/
+    instance-id: springcloud-dept-provider8001  #虚拟名称   #自定义服务名称信息,表示是一个熔断器的微服务
+    prefer-ip-address: true     #访问路径显示IP地址  
+    
+info:     #追加微服务信息的描述
+  app.name: spring-springcloud   #工程名称
+  company.name: www.jdy.com    #公司名称
+  bulid.artifactId: $project.artifactId$  #灵活的调用在父工程有配置build
+  build.version: $project.version$       
+      
+---
+spring: 
+  profiles: 
+   active: 
+    - test
+    
+server: 
+  port: 8002 
+  
+spring:
+  profiles: #test  测试环境
+  application:
+    name: springcloud-dept-provider                      #对外暴露的微服务的名称
+  datasource:
+     type: com.alibaba.druid.pool.DruidDataSource     #当前数据源的类型阿里云的
+     driver-class-name: com.mysql.jdbc.Driver       #Mysql的驱动包org.git.mm.mysql.Driver
+     url: jdbc:mysql://localhost:3306/cloud1        #连接数据库的名称
+     username: root
+     password: root
+     dbcp2:
+      min-idle: 6              #当前数据库连接池的最小维持连接数
+      initial-size: 6          #初始化连接
+      max-total: 6            #最大连接数
+      max-wait-millis: 200      #等待连接获取的做大超时时间
+      
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml  #mybatis配置文件的路径
+  type-aliases-package: com.bjsxt.springcloud.pojo    #所有的entity的实体类路径
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                 #mapper映射的文件
+
+eureka:
+  client:                       #客户端注册进行eureka服务列表
+   service-url:
+    defaultZone: http://eureka8761.com:8761/eureka/
+    instance-id: springcloud-dept-provider8001   #自定义服务名称信息,表示是一个熔断器的微服务
+    prefer-ip-address: true     #访问路径显示IP地址  
+    
+info:     #追加微服务信息的描述
+  app.name: spring-springcloud   #工程名称
+  company.name: www.jdy.com    #公司名称
+  bulid.artifactId: $project.artifactId$  #灵活的调用在父工程有配置build
+  build.version: $project.version$       
+         
