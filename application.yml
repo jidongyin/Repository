@@ -7,7 +7,7 @@ spring:
       - dev
 ---
 spring:
-  profiles: 
+  profiles: dev
     application:
        name: springcloud-dept-config-dev-client
 eureka:  
@@ -25,7 +25,7 @@ spring:
       - test
 ---
 spring:
-  profiles: 
+  profiles: test 
     application: 
        name: springcloud-dept-config-test-client
 eureka:  
